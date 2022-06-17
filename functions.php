@@ -29,10 +29,10 @@ function contactform7lead($cf7)
         $args['Conversao'] = $cf7->title();
 	$args['Origem'] = 'Site';
         // $args['Tags'] = 'tag1,tag2';
-        $args['Fonte'] = $data['origem'];
+        $args['Fonte'] = $data['origem'][0];
         $args['Pax'] = $data['pax'];
         $args['DataEvento'] = $data['dataevento'];
-        $args['TipoEvento'] = $data['tipoevento'];
+        $args['TipoEvento'] = $data['tipoevento'][0];
     }
     $result = wp_remote_post('https://api.kazah.io/apiv1/lead', array('body' => $args));
 }
